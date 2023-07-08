@@ -1,13 +1,13 @@
 import React, { Fragment } from 'react'
 import ReactDOM from 'react-dom/client'
-import Boton from "./App";
+import {App} from '/src/App'
+import './index.css'
+import './App.css'
 
 
 const root = ReactDOM.createRoot(document.getElementById('root')) 
 root.render(
   <Fragment>
-  <h1>Provando Git</h1>
-    <Boton/>
-    
+    <App/>
   </Fragment>,
 )
