@@ -1,16 +1,18 @@
 
 
-body {
+ body {
     margin: 0;
-    background: #222;
+    background: rgb(90, 63, 243);
     font-family: system-ui;
     display: grid;
-    place-content: center;
+  
     min-height: 100vh;
-  }
+    
+    }
   
   .App {
     display: flex;
     flex-direction: column;
-    gap: 8px;
-  }
+    gap: 16px;
+    
+  } 

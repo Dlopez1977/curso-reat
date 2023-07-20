@@ -1,22 +1,40 @@
-import '/src/App.css'
+import { useState } from "react";
+import "./App.css";
 
-   export function App(){
-    return(
-        <article>
-            <h2 className='text-center text-primary my-4'>Card Twitter</h2>
-            <header>
-                
-                <img className="img-thumbnail" src="/src/img/cristopher1.jpg" alt="cristopher" />
-                <div>
-                    <h2 className='text-white'>Cristopher Lopez</h2>
-                    <span className='text-white' >"@Cristo"</span>
-                </div>
-            </header>
+export const App = ({ children, userName }) => {
+  const [isfollowing, setIsfollowing] = useState(false);
+    const imgUser = `https://unavatar.io/${userName}`;
+  
+  const text = isfollowing ? "siguiendo" : "seguir";
+  const buttonClassName = isfollowing
+    ? "tw-followCard-button is-following"
+    : "tw-following-button";
 
-            <aside>
-                <button>Seguir</button>
-            </aside>
-        </article>
-    )
-   }
+  const handleClick = () => {
+    setIsfollowing(!isfollowing);
+  };
+  return (
+    <>
+    
+    <article className="tw-followCard">
+      <header className="tw-followCard-header">
+        <img className="tw-followCard-avatar" src={imgUser} alt="Cristopher"/>
+        <div className="tw-followCard-info">
+          <strong>{children}</strong>
+          <span className="tw-followCard-infoUserName">@{userName}</span>
+        </div>
+      </header>
+
+      <aside>
+        <button className={buttonClassName} onClick={handleClick}>
+          <span className="tw-followCard-text">{text}</span>
+          <span className="tw-followCard-stopFollow">dejar de seguir</span>
+        </button>
+      </aside>
+    </article>
+  
+    </>
+  );
+};
+
 

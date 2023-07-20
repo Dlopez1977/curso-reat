@@ -1,13 +1,27 @@
-import React, { Fragment } from 'react'
+import React from 'react'
 import ReactDOM from 'react-dom/client'
-import {App} from '/src/App'
 import './index.css'
-import './App.css'
+import { App } from "/src/App";
+import { Avatar } from '/src/Avatar';
 
 
 const root = ReactDOM.createRoot(document.getElementById('root')) 
+ 
+
 root.render(
-  <Fragment>
-    <App/>
-  </Fragment>,
-)
+<section className='App'>
+
+  <App    userName= 'omidnikrah'>
+     Cristopher Lopez
+     </App>
+  <App   userName= 'pheralb'>
+        Pablo Hernandez
+  </App>
+
+  <Avatar/>
+  
+
+</section>
+  )
+
+
